@@ -337,3 +337,4 @@ TypeError: Jinja2Templates.TemplateResponse() missing 1 required positional argu
 2026-03-26 17:15:12,365 - app_logger - INFO - Request: GET http://localhost:8000/openapi.json completed in 0.0323 seconds
 2026-03-26 17:15:30,790 - app_logger - INFO - Request: POST http://localhost:8000/api/v1/generate completed in 0.0023 seconds
 2026-03-26 17:15:33,515 - app_logger - INFO - Application is shutting down from shutdown event
+2026-03-26 17:15:35,041 - app_logger - INFO - Application started from startup event
