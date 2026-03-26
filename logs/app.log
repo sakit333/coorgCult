@@ -1,0 +1,318 @@
+2026-03-26 15:14:50,140 - app_logger - INFO - Reading root endpoint
+2026-03-26 15:14:50,141 - app_logger - INFO - Request: GET http://localhost:8000/ completed in 0.0017 seconds
+2026-03-26 15:16:46,554 - app_logger - INFO - Application is shutting down from shutdown event
+2026-03-26 15:16:47,304 - app_logger - INFO - Application started from startup event
+2026-03-26 15:17:14,810 - app_logger - INFO - Application is shutting down from shutdown event
+2026-03-26 15:17:15,408 - app_logger - INFO - Application started from startup event
+2026-03-26 15:17:19,543 - app_logger - INFO - Request: GET http://localhost:8000/docs completed in 0.0008 seconds
+2026-03-26 15:17:19,639 - app_logger - INFO - Request: GET http://localhost:8000/openapi.json completed in 0.0054 seconds
+2026-03-26 15:17:21,773 - app_logger - INFO - Request: GET http://localhost:8000/docs completed in 0.0005 seconds
+2026-03-26 15:17:21,819 - app_logger - INFO - Request: GET http://localhost:8000/openapi.json completed in 0.0003 seconds
+2026-03-26 15:17:47,784 - app_logger - INFO - Application is shutting down from shutdown event
+2026-03-26 15:17:48,464 - app_logger - INFO - Application started from startup event
+2026-03-26 15:18:08,584 - app_logger - INFO - Application is shutting down from shutdown event
+2026-03-26 15:18:09,235 - app_logger - INFO - Application started from startup event
+2026-03-26 15:18:12,230 - app_logger - INFO - Application is shutting down from shutdown event
+2026-03-26 15:18:12,888 - app_logger - INFO - Application started from startup event
+2026-03-26 15:18:16,766 - app_logger - INFO - Request: GET http://localhost:8000/docs completed in 0.0003 seconds
+2026-03-26 15:18:16,821 - app_logger - INFO - Request: GET http://localhost:8000/openapi.json completed in 0.0019 seconds
+2026-03-26 15:18:24,988 - app_logger - INFO - Application is shutting down from shutdown event
+2026-03-26 15:18:25,985 - app_logger - INFO - Application started from startup event
+2026-03-26 15:18:27,541 - app_logger - INFO - Request: GET http://localhost:8000/docs completed in 0.0006 seconds
+2026-03-26 15:18:27,591 - app_logger - INFO - Request: GET http://localhost:8000/openapi.json completed in 0.0021 seconds
+2026-03-26 15:19:03,601 - app_logger - INFO - Application is shutting down from shutdown event
+2026-03-26 15:19:04,429 - app_logger - INFO - Application started from startup event
+2026-03-26 15:19:08,359 - app_logger - INFO - Request: GET http://localhost:8000/docs completed in 0.0003 seconds
+2026-03-26 15:19:08,416 - app_logger - INFO - Request: GET http://localhost:8000/openapi.json completed in 0.0019 seconds
+2026-03-26 15:19:13,566 - app_logger - INFO - Application is shutting down from shutdown event
+2026-03-26 15:19:14,155 - app_logger - INFO - Application started from startup event
+2026-03-26 15:19:22,803 - app_logger - WARNING - Invalid item_id: 2
+2026-03-26 15:19:22,804 - app_logger - INFO - Request: POST http://localhost:8000/api/v1/code/2 completed in 0.0026 seconds
+2026-03-26 15:19:27,605 - app_logger - INFO - Creating code for item_id: 20
+2026-03-26 15:19:27,606 - app_logger - INFO - Request: POST http://localhost:8000/api/v1/code/20 completed in 0.0012 seconds
+2026-03-26 15:29:30,157 - app_logger - INFO - Application is shutting down from shutdown event
+2026-03-26 15:29:31,596 - app_logger - INFO - Application started from startup event
+2026-03-26 15:30:08,957 - app_logger - INFO - Application is shutting down from shutdown event
+2026-03-26 15:30:09,737 - app_logger - INFO - Application started from startup event
+2026-03-26 15:30:15,375 - app_logger - INFO - Application is shutting down from shutdown event
+2026-03-26 15:30:16,099 - app_logger - INFO - Application started from startup event
+2026-03-26 15:30:21,024 - app_logger - INFO - Request: GET http://localhost:8000/docs completed in 0.0013 seconds
+2026-03-26 15:30:21,121 - app_logger - INFO - Request: GET http://localhost:8000/openapi.json completed in 0.0068 seconds
+2026-03-26 15:30:33,993 - app_logger - INFO - Adding numbers: 10 + 20 = 30
+2026-03-26 15:30:33,993 - app_logger - INFO - Request: POST http://localhost:8000/api/v1/adding/10/20 completed in 0.0019 seconds
+2026-03-26 15:31:09,285 - app_logger - INFO - Application is shutting down from shutdown event
+2026-03-26 15:31:10,077 - app_logger - INFO - Application started from startup event
+2026-03-26 15:31:18,800 - app_logger - INFO - Application is shutting down from shutdown event
+2026-03-26 15:31:19,552 - app_logger - INFO - Application started from startup event
+2026-03-26 15:31:22,708 - app_logger - INFO - Adding numbers: 10 + 1 = 11
+2026-03-26 15:31:22,709 - app_logger - INFO - Request: POST http://localhost:8000/api/v1/adding/10/1 completed in 0.0018 seconds
+2026-03-26 15:31:55,211 - app_logger - INFO - Application is shutting down from shutdown event
+2026-03-26 15:31:55,992 - app_logger - INFO - Application started from startup event
+2026-03-26 15:32:01,586 - app_logger - INFO - Request: GET http://localhost:8000/docs completed in 0.0004 seconds
+2026-03-26 15:32:01,670 - app_logger - INFO - Request: GET http://localhost:8000/openapi.json completed in 0.0049 seconds
+2026-03-26 15:32:18,669 - app_logger - INFO - Subtracting numbers: 10 - 10 = 0
+2026-03-26 15:32:18,670 - app_logger - INFO - Request: POST http://localhost:8000/api/v1/subtract/10/to/10 completed in 0.0022 seconds
+2026-03-26 15:33:16,750 - app_logger - INFO - Application is shutting down from shutdown event
+2026-03-26 15:39:47,404 - app_logger - INFO - Application started from startup event
+2026-03-26 15:39:54,155 - app_logger - INFO - Request: GET http://localhost:8000/docs completed in 0.0004 seconds
+2026-03-26 15:39:54,242 - app_logger - INFO - Request: GET http://localhost:8000/openapi.json completed in 0.0027 seconds
+2026-03-26 15:39:58,954 - app_logger - ERROR - Unhandled exception occurred
+Traceback (most recent call last):
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+                                   ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Python313\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sak\Desktop\Projects\coorgCult\app\main.py", line 18, in log_request
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\starlette\routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\starlette\routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\fastapi\routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\fastapi\routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\fastapi\routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\fastapi\routing.py", line 328, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sak\Desktop\Projects\coorgCult\app\api\routes.py", line 10, in read_root
+    return templates.TemplateResponse("index.html", {"request": request, "message": "Welcome to the Code Generation API!"})
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\starlette\templating.py", line 148, in TemplateResponse
+    template = self.get_template(name)
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\starlette\templating.py", line 115, in get_template
+    return self.env.get_template(name)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\jinja2\environment.py", line 964, in _load_template
+    template = self.cache.get(cache_key)
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\jinja2\utils.py", line 477, in get
+    return self[key]
+           ~~~~^^^^^
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\jinja2\utils.py", line 515, in __getitem__
+    rv = self._mapping[key]
+         ~~~~~~~~~~~~~^^^^^
+TypeError: unhashable type: 'dict'
+2026-03-26 15:40:07,344 - app_logger - INFO - Request: GET http://localhost:8000/ completed in 0.0005 seconds
+2026-03-26 15:40:07,416 - app_logger - INFO - Request: GET http://localhost:8000/favicon.ico completed in 0.0003 seconds
+2026-03-26 15:40:36,394 - app_logger - INFO - Application is shutting down from shutdown event
+2026-03-26 15:40:37,184 - app_logger - INFO - Application started from startup event
+2026-03-26 15:40:42,883 - app_logger - INFO - Request: GET http://localhost:8000/ completed in 0.0003 seconds
+2026-03-26 15:40:50,160 - app_logger - INFO - Application is shutting down from shutdown event
+2026-03-26 16:52:18,788 - app_logger - INFO - Application started from startup event
+2026-03-26 16:52:26,142 - app_logger - INFO - Request: GET http://localhost:8000/docs completed in 0.0010 seconds
+2026-03-26 16:52:26,325 - app_logger - INFO - Request: GET http://localhost:8000/openapi.json completed in 0.0092 seconds
+2026-03-26 16:52:32,188 - app_logger - ERROR - Unhandled exception occurred
+Traceback (most recent call last):
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+                                   ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Python313\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sak\Desktop\Projects\coorgCult\app\main.py", line 18, in log_request
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\starlette\routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\starlette\routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\fastapi\routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\fastapi\routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\fastapi\routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\fastapi\routing.py", line 328, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sak\Desktop\Projects\coorgCult\app\api\routes.py", line 10, in read_root
+    return templates.TemplateResponse("index.html", {"request": request})
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\starlette\templating.py", line 148, in TemplateResponse
+    template = self.get_template(name)
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\starlette\templating.py", line 115, in get_template
+    return self.env.get_template(name)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\jinja2\environment.py", line 964, in _load_template
+    template = self.cache.get(cache_key)
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\jinja2\utils.py", line 477, in get
+    return self[key]
+           ~~~~^^^^^
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\jinja2\utils.py", line 515, in __getitem__
+    rv = self._mapping[key]
+         ~~~~~~~~~~~~~^^^^^
+TypeError: unhashable type: 'dict'
+2026-03-26 16:54:14,588 - app_logger - INFO - Application is shutting down from shutdown event
+2026-03-26 16:54:16,110 - app_logger - INFO - Application started from startup event
+2026-03-26 16:54:18,946 - app_logger - ERROR - Unhandled exception occurred
+Traceback (most recent call last):
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+                                   ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Python313\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sak\Desktop\Projects\coorgCult\app\main.py", line 18, in log_request
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\starlette\routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\starlette\routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\fastapi\routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\fastapi\routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\fastapi\routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\sak\Desktop\Projects\coorgCult\venv\Lib\site-packages\fastapi\routing.py", line 328, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sak\Desktop\Projects\coorgCult\app\api\routes.py", line 10, in read_root
+    return templates.TemplateResponse(name="index.html", context={"request": request})
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Jinja2Templates.TemplateResponse() missing 1 required positional argument: 'request'
+2026-03-26 16:55:55,955 - app_logger - INFO - Application is shutting down from shutdown event
+2026-03-26 16:55:57,582 - app_logger - INFO - Application started from startup event
+2026-03-26 16:56:33,551 - app_logger - INFO - Application is shutting down from shutdown event
+2026-03-26 16:56:42,583 - app_logger - INFO - Application started from startup event
+2026-03-26 16:56:45,744 - app_logger - INFO - Request: GET http://localhost:8000/api/v1/ completed in 0.0094 seconds
+2026-03-26 16:59:55,608 - app_logger - INFO - Application is shutting down from shutdown event
+2026-03-26 16:59:57,111 - app_logger - INFO - Application started from startup event
+2026-03-26 17:00:02,073 - app_logger - INFO - Application is shutting down from shutdown event
+2026-03-26 17:00:03,789 - app_logger - INFO - Application started from startup event
+2026-03-26 17:00:09,704 - app_logger - INFO - Application is shutting down from shutdown event
+2026-03-26 17:00:49,704 - app_logger - INFO - Application started from startup event
+2026-03-26 17:00:55,312 - app_logger - INFO - Request: GET http://localhost:8000/ completed in 0.0009 seconds
+2026-03-26 17:00:57,123 - app_logger - INFO - Request: GET http://localhost:8000/ completed in 0.0005 seconds
+2026-03-26 17:01:14,398 - app_logger - INFO - Request: GET http://localhost:8000/docs completed in 0.0006 seconds
+2026-03-26 17:01:14,564 - app_logger - INFO - Request: GET http://localhost:8000/openapi.json completed in 0.0057 seconds
+2026-03-26 17:01:18,041 - app_logger - INFO - Request: GET http://localhost:8000/api/v1/ completed in 0.0071 seconds
+2026-03-26 17:01:24,678 - app_logger - INFO - Request: GET http://localhost:8000/docs completed in 0.0005 seconds
+2026-03-26 17:01:24,898 - app_logger - INFO - Request: GET http://localhost:8000/openapi.json completed in 0.0008 seconds
+2026-03-26 17:01:28,222 - app_logger - INFO - Request: GET http://localhost:8000/ completed in 0.0008 seconds
+2026-03-26 17:01:50,882 - app_logger - INFO - Request: GET http://localhost:8000/docs completed in 0.0008 seconds
+2026-03-26 17:01:51,090 - app_logger - INFO - Request: GET http://localhost:8000/openapi.json completed in 0.0005 seconds
+2026-03-26 17:01:53,010 - app_logger - INFO - Request: GET http://localhost:8000/api/v1 completed in 0.0009 seconds
+2026-03-26 17:01:53,031 - app_logger - INFO - Request: GET http://localhost:8000/api/v1/ completed in 0.0051 seconds
+2026-03-26 17:01:53,314 - app_logger - INFO - Request: GET http://localhost:8000/static/css/style.css completed in 0.2135 seconds
+2026-03-26 17:01:53,340 - app_logger - INFO - Request: GET http://localhost:8000/static/js/app.js completed in 0.0198 seconds
+2026-03-26 17:04:28,387 - app_logger - INFO - Application is shutting down from shutdown event
+2026-03-26 17:04:30,181 - app_logger - INFO - Application started from startup event
+2026-03-26 17:04:44,746 - app_logger - INFO - Application is shutting down from shutdown event
+2026-03-26 17:04:46,351 - app_logger - INFO - Application started from startup event
+2026-03-26 17:04:51,921 - app_logger - INFO - Application is shutting down from shutdown event
+2026-03-26 17:04:53,396 - app_logger - INFO - Application started from startup event
+2026-03-26 17:05:03,340 - app_logger - INFO - Application is shutting down from shutdown event
+2026-03-26 17:05:04,775 - app_logger - INFO - Application started from startup event
+2026-03-26 17:05:19,781 - app_logger - INFO - Application is shutting down from shutdown event
+2026-03-26 17:05:21,881 - app_logger - INFO - Application started from startup event
+2026-03-26 17:06:15,323 - app_logger - INFO - Application is shutting down from shutdown event
+2026-03-26 17:06:16,576 - app_logger - INFO - Application started from startup event
+2026-03-26 17:06:22,567 - app_logger - INFO - Request: GET http://localhost:8000/api/v1/ completed in 0.0106 seconds
+2026-03-26 17:06:22,816 - app_logger - INFO - Request: GET http://localhost:8000/static/css/style.css completed in 0.2032 seconds
+2026-03-26 17:06:22,819 - app_logger - INFO - Request: GET http://localhost:8000/static/js/app.js completed in 0.1991 seconds
+2026-03-26 17:06:26,765 - app_logger - INFO - Request: POST http://localhost:8000/api/v1/generate completed in 0.0034 seconds
+2026-03-26 17:06:32,442 - app_logger - INFO - Request: POST http://localhost:8000/api/v1/generate completed in 0.0015 seconds
+2026-03-26 17:09:07,060 - app_logger - INFO - Application is shutting down from shutdown event
