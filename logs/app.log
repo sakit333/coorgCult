@@ -357,3 +357,4 @@ TypeError: Jinja2Templates.TemplateResponse() missing 1 required positional argu
 2026-03-26 17:43:48,128 - app_logger - INFO - Generated text for prompt: need sample python code for printing hello sak
 2026-03-26 17:43:48,130 - app_logger - INFO - Request: POST http://localhost:8000/api/v1/generate completed in 13.5822 seconds
 2026-03-26 17:44:30,316 - app_logger - INFO - Application is shutting down from shutdown event
+2026-03-26 17:44:32,170 - app_logger - INFO - Application started from startup event
