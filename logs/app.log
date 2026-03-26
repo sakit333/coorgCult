@@ -338,3 +338,22 @@ TypeError: Jinja2Templates.TemplateResponse() missing 1 required positional argu
 2026-03-26 17:15:30,790 - app_logger - INFO - Request: POST http://localhost:8000/api/v1/generate completed in 0.0023 seconds
 2026-03-26 17:15:33,515 - app_logger - INFO - Application is shutting down from shutdown event
 2026-03-26 17:15:35,041 - app_logger - INFO - Application started from startup event
+2026-03-26 17:16:36,184 - app_logger - INFO - Application started from startup event
+2026-03-26 17:37:54,424 - app_logger - INFO - Application is shutting down from shutdown event
+2026-03-26 17:37:55,963 - app_logger - INFO - Application started from startup event
+2026-03-26 17:39:34,090 - app_logger - INFO - Application is shutting down from shutdown event
+2026-03-26 17:39:35,848 - app_logger - INFO - Application started from startup event
+2026-03-26 17:40:01,417 - app_logger - INFO - Application is shutting down from shutdown event
+2026-03-26 17:40:03,116 - app_logger - INFO - Application started from startup event
+2026-03-26 17:40:23,976 - app_logger - INFO - Application is shutting down from shutdown event
+2026-03-26 17:40:25,254 - app_logger - INFO - Application started from startup event
+2026-03-26 17:40:56,774 - app_logger - INFO - Application is shutting down from shutdown event
+2026-03-26 17:42:59,235 - app_logger - INFO - Application started from startup event
+2026-03-26 17:43:05,059 - app_logger - INFO - Request: GET http://localhost:8000/api/v1/ completed in 0.0119 seconds
+2026-03-26 17:43:05,314 - app_logger - INFO - Request: GET http://localhost:8000/static/css/style.css completed in 0.2171 seconds
+2026-03-26 17:43:05,317 - app_logger - INFO - Request: GET http://localhost:8000/static/js/app.js completed in 0.2109 seconds
+2026-03-26 17:43:19,164 - app_logger - INFO - Generated text for prompt: hi
+2026-03-26 17:43:19,169 - app_logger - INFO - Request: POST http://localhost:8000/api/v1/generate completed in 10.3884 seconds
+2026-03-26 17:43:48,128 - app_logger - INFO - Generated text for prompt: need sample python code for printing hello sak
+2026-03-26 17:43:48,130 - app_logger - INFO - Request: POST http://localhost:8000/api/v1/generate completed in 13.5822 seconds
+2026-03-26 17:44:30,316 - app_logger - INFO - Application is shutting down from shutdown event

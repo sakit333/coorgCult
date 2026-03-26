@@ -3,6 +3,7 @@ from fastapi.responses import HTMLResponse
 from app.core.logger import logger
 from app.core.config import templates
 from app.api.schemas import GenerateRequest, GenerateResponse
+from app.services.ai_service import generate_with_ollama
 
 router = APIRouter(tags=["Code Generation"])
 
@@ -41,4 +42,6 @@ async def subtract_numbers(num1: int, num2: int):
     
 @router.post("/generate", response_model=GenerateResponse)
 async def generate_text(data: GenerateRequest):
-    return GenerateResponse(response=f"Generated text based on prompt: {data.prompt}")
+    ai_output = await generate_with_ollama(data.prompt)
+    logger.info(f"Generated text for prompt: {data.prompt}")
+    return GenerateResponse(response=ai_output)
