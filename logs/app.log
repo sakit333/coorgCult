@@ -316,3 +316,24 @@ TypeError: Jinja2Templates.TemplateResponse() missing 1 required positional argu
 2026-03-26 17:06:26,765 - app_logger - INFO - Request: POST http://localhost:8000/api/v1/generate completed in 0.0034 seconds
 2026-03-26 17:06:32,442 - app_logger - INFO - Request: POST http://localhost:8000/api/v1/generate completed in 0.0015 seconds
 2026-03-26 17:09:07,060 - app_logger - INFO - Application is shutting down from shutdown event
+2026-03-26 17:11:46,899 - app_logger - INFO - Application started from startup event
+2026-03-26 17:12:44,062 - app_logger - INFO - Application is shutting down from shutdown event
+2026-03-26 17:12:45,816 - app_logger - INFO - Application started from startup event
+2026-03-26 17:12:57,494 - app_logger - INFO - Application is shutting down from shutdown event
+2026-03-26 17:12:58,759 - app_logger - INFO - Application started from startup event
+2026-03-26 17:13:47,386 - app_logger - INFO - Application is shutting down from shutdown event
+2026-03-26 17:13:48,935 - app_logger - INFO - Application started from startup event
+2026-03-26 17:14:12,547 - app_logger - INFO - Application is shutting down from shutdown event
+2026-03-26 17:14:13,964 - app_logger - INFO - Application started from startup event
+2026-03-26 17:14:34,904 - app_logger - INFO - Application is shutting down from shutdown event
+2026-03-26 17:14:36,567 - app_logger - INFO - Application started from startup event
+2026-03-26 17:15:01,278 - app_logger - INFO - Application is shutting down from shutdown event
+2026-03-26 17:15:02,850 - app_logger - INFO - Application started from startup event
+2026-03-26 17:15:04,779 - app_logger - INFO - Request: GET http://localhost:8000/api/v1/ completed in 0.0081 seconds
+2026-03-26 17:15:05,053 - app_logger - INFO - Request: GET http://localhost:8000/static/css/style.css completed in 0.2052 seconds
+2026-03-26 17:15:05,057 - app_logger - INFO - Request: GET http://localhost:8000/static/js/app.js completed in 0.1975 seconds
+2026-03-26 17:15:08,533 - app_logger - INFO - Request: POST http://localhost:8000/api/v1/generate completed in 0.0163 seconds
+2026-03-26 17:15:12,144 - app_logger - INFO - Request: GET http://localhost:8000/docs completed in 0.0007 seconds
+2026-03-26 17:15:12,365 - app_logger - INFO - Request: GET http://localhost:8000/openapi.json completed in 0.0323 seconds
+2026-03-26 17:15:30,790 - app_logger - INFO - Request: POST http://localhost:8000/api/v1/generate completed in 0.0023 seconds
+2026-03-26 17:15:33,515 - app_logger - INFO - Application is shutting down from shutdown event

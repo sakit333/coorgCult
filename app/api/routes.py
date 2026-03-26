@@ -2,6 +2,7 @@ from fastapi import APIRouter, HTTPException, Request, Body
 from fastapi.responses import HTMLResponse
 from app.core.logger import logger
 from app.core.config import templates
+from app.api.schemas import GenerateRequest, GenerateResponse
 
 router = APIRouter(tags=["Code Generation"])
 
@@ -38,7 +39,6 @@ async def subtract_numbers(num1: int, num2: int):
         logger.warning(f"Invalid input: num1={num1}, num2={num2}")
         raise HTTPException(status_code=400, detail="Invalid input")
     
-@router.post("/generate")
-async def generate_text(data: dict = Body(...)):
-    prompt = data.get("prompt", "")
-    return {"response": f"Generated text based on prompt: {prompt}"}
+@router.post("/generate", response_model=GenerateResponse)
+async def generate_text(data: GenerateRequest):
+    return GenerateResponse(response=f"Generated text based on prompt: {data.prompt}")
