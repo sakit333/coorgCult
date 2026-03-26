@@ -4,6 +4,7 @@ from app.core.logger import logger
 from app.core.config import templates
 from app.api.schemas import GenerateRequest, GenerateResponse
 from app.services.ai_service import generate_with_ollama
+from app.db.redis_client import save_message, get_history
 
 router = APIRouter(tags=["Code Generation"])
 
@@ -42,6 +43,18 @@ async def subtract_numbers(num1: int, num2: int):
     
 @router.post("/generate", response_model=GenerateResponse)
 async def generate_text(data: GenerateRequest):
+    save_message(data.prompt)
     ai_output = await generate_with_ollama(data.prompt)
+    save_message(f"AI Response: {ai_output}")
     logger.info(f"Generated text for prompt: {data.prompt}")
-    return GenerateResponse(response=ai_output)
+    history = get_history()
+    return GenerateResponse(
+        response=ai_output,
+        history=history
+    )
+
+@router.get("/history")
+async def get_chat_history():
+    history = get_history()
+    logger.info("Retrieved chat history")
+    return {"history": history}

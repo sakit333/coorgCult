@@ -5,3 +5,4 @@ class GenerateRequest(BaseModel):
 
 class GenerateResponse(BaseModel):
     response: str
+    history: list[str] = []
