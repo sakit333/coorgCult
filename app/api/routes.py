@@ -43,7 +43,7 @@ async def subtract_numbers(num1: int, num2: int):
     
 @router.post("/generate", response_model=GenerateResponse)
 async def generate_text(data: GenerateRequest):
-    save_message(data.session_id, data.prompt)
+    save_message(data.session_id, f"User: {data.prompt}")
     cached = get_cached_response(data.session_id, data.prompt)
     if cached:
         logger.info(f"Cache hit for prompt: {data.prompt}")
@@ -51,11 +51,13 @@ async def generate_text(data: GenerateRequest):
             response=cached, 
             history=get_history(data.session_id)
         )
-    ai_output = await generate_with_ollama(data.prompt)
+    history = get_history(data.session_id)[-10:]
+    full_prompt = "\n".join(history) + "\nAI:"
+    ai_output = await generate_with_ollama(full_prompt)
+    save_message(data.session_id, f"AI: {ai_output}")
     set_cached_response(data.session_id, data.prompt, ai_output)
-    save_message(data.session_id, ai_output)
     logger.info(f"Generated text for prompt: {data.prompt}")
-    history = get_history(data.session_id)
+    # history = get_history(data.session_id)
     return GenerateResponse(
         response=ai_output,
         history=history
