@@ -1,8 +1,9 @@
 import requests
+from app.core.config import settings
 
 async def generate_with_ollama(prompt: str):
     response = requests.post(
-        "http://localhost:11434/api/generate",
+        f"{settings.OLLAMA_URL}/api/generate",
         json={
             "model": "deepseek-coder",
             "prompt": prompt,

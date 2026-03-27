@@ -74,4 +74,10 @@ Thumbs.db
 *.sqlite
 *.sqlite3
 
+// This gitignore pattern ignores all files and directories within the ./logs folder.
+// The /* wildcard matches any file or directory name at that level.
+// Note: This will ignore contents of logs/, but the logs/ directory itself
+// may still be tracked if it was previously committed. Consider using logs/
+// (without the /*) to ignore the entire directory, or add logs/ to .gitignore
+// if you want to ensure the directory itself is also ignored.
 ./logs/*
