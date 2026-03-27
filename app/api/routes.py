@@ -61,8 +61,8 @@ async def generate_text(data: GenerateRequest):
         history=history
     )
 
-@router.get("/history")
-async def get_chat_history():
-    history = get_history()
+@router.get("/history/{session_id}")
+async def get_chat_history(session_id: str):
+    history = get_history(session_id)
     logger.info("Retrieved chat history")
     return {"history": history}
