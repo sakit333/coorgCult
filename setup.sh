@@ -7,3 +7,6 @@ docker run -d \
   -e POSTGRES_DB=coorgcult \
   -p 5432:5432 \
   postgres
+
+# To Access PostgreSQL Container
+#  docker exec -it postgres-db psql -U root -d coorgcult
