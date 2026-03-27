@@ -3,6 +3,7 @@ import time
 from app.core.logger import logger
 from app.api.routes import router
 from fastapi.staticfiles import StaticFiles
+from app.db.database import engine
 
 
 # Initialize FastAPI app
@@ -13,6 +14,13 @@ app.mount("/static", StaticFiles(directory="app/static"), name="static")
 
 @app.on_event("startup")
 async def startup_event():
+    try:
+        async with engine.begin() as connection:
+            print("✅ PostgreSQL connected successfully")
+            logger.info("PostgreSQL connection established successfully")
+    except Exception as e:
+        print("❌ PostgreSQL connection failed:", e)
+        logger.error("Failed to connect to PostgreSQL")
     logger.info("Application started from startup event")
 
 @app.middleware("http")
