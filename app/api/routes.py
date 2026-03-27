@@ -4,7 +4,7 @@ from app.core.logger import logger
 from app.core.config import templates
 from app.api.schemas import GenerateRequest, GenerateResponse
 from app.services.ai_service import generate_with_ollama
-from app.db.redis_client import save_message, get_history
+from app.db.redis_client import save_message, get_history, get_cached_response, set_cached_response
 
 router = APIRouter(tags=["Code Generation"])
 
@@ -43,11 +43,19 @@ async def subtract_numbers(num1: int, num2: int):
     
 @router.post("/generate", response_model=GenerateResponse)
 async def generate_text(data: GenerateRequest):
-    save_message(data.prompt)
+    save_message(data.session_id, data.prompt)
+    cached = get_cached_response(data.session_id, data.prompt)
+    if cached:
+        logger.info(f"Cache hit for prompt: {data.prompt}")
+        return GenerateResponse(
+            response=cached, 
+            history=get_history(data.session_id)
+        )
     ai_output = await generate_with_ollama(data.prompt)
-    save_message(f"AI Response: {ai_output}")
+    set_cached_response(data.session_id, data.prompt, ai_output)
+    save_message(data.session_id, ai_output)
     logger.info(f"Generated text for prompt: {data.prompt}")
-    history = get_history()
+    history = get_history(data.session_id)
     return GenerateResponse(
         response=ai_output,
         history=history

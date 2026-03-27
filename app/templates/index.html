@@ -3,6 +3,14 @@
 <head>
     <title>My App</title>
     <link rel="stylesheet" href="/static/css/style.css">
+    <script>
+        window.session_id = localStorage.getItem("session_id");
+
+        if (!window.session_id) {
+            window.session_id = crypto.randomUUID();
+            localStorage.setItem("session_id", window.session_id);
+        }
+    </script>
 </head>
 <body>
     <h1>Hello from FastAPI 🚀</h1>
