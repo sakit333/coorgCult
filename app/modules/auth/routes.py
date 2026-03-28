@@ -17,9 +17,7 @@ async def signup(user: UserSignup, db: AsyncSession = Depends(get_db)):
     )
 
     return UserSignupResponse(
-        id=new_user.id,
-        username=new_user.username,
-        email=new_user.email
+        id=new_user.id
     )
 
 @router.post("/login", response_model=UserLoginResponse)
