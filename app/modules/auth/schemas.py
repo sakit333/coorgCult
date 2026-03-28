@@ -8,3 +8,11 @@ class UserSignup(BaseModel):
 class UserSignupResponse(BaseModel):
     id: int
     username: str
+
+class UserLogin(BaseModel):
+    username: str
+    password: str
+
+class UserLoginResponse(BaseModel):
+    access_token: str
+    token_type: str = "bearer"
