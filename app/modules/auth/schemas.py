@@ -1,9 +1,9 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, EmailStr, Field
 
 class UserSignup(BaseModel):
     username: str
-    email: str
-    password: str
+    email: EmailStr
+    password: str = Field(min_length=8, max_length=50)  # Enforce minimum password length
 
 class UserSignupResponse(BaseModel):
     id: int
