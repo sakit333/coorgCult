@@ -1,0 +1,62 @@
+version: '3.8'
+
+services:
+  # The FastAPI Application
+  web:
+    build: .
+    image: sakit333/coorgcult-api:latest
+    container_name: coorgcult_web
+    ports:
+      - "8000:8000"
+    # Load default variables from .env
+    env_file:
+      - .env
+    environment:
+      # Inject overriding variables for Docker bridging instead of localhost
+      REDIS_HOST: redis
+      POSTGRES_HOST: db
+      # Ensure Ollama points to the host machine running outside Docker (Ollama Desktop)
+      OLLAMA_URL: http://host.docker.internal:11434
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_started
+    volumes:
+      # Map the app directory for live API changes without a rebuild
+      - ./app:/app/app
+      - ./logs:/app/logs
+    restart: always
+
+  # PostgreSQL Database
+  db:
+    image: postgres:15-alpine
+    container_name: coorgcult_db
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-coorgcult}
+      POSTGRES_USER: ${POSTGRES_USER:-root}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-1234}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-root} -d ${POSTGRES_DB:-coorgcult}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    restart: always
+
+  # Redis In-Memory DB (Session & History Cache)
+  redis:
+    image: redis:alpine
+    container_name: coorgcult_redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    restart: always
+
+volumes:
+  postgres_data:
+  redis_data:
