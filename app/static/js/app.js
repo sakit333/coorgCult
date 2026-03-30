@@ -25,7 +25,7 @@ async function sendData() {
     console.log("Sending prompt:", prompt, "| Session:", window.session_id);
     
     try {
-        const response = await fetch("/api/generate", {
+        const response = await fetch("/api/v1/generate", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
