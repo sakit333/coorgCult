@@ -8,10 +8,6 @@ from app.db.redis_client import save_message, get_history, get_cached_response, 
 
 router = APIRouter(tags=["Code Generation"])
 
-@router.get("/", response_class=HTMLResponse)
-async def read_root(request: Request):
-    return templates.TemplateResponse(name="index.html", context={"request": request}, request=request)
-
 
 @router.post("/code/{item_id}")
 async def create_code(item_id: int):

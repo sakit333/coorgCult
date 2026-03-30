@@ -5,7 +5,7 @@ from app.api.routes import router
 from fastapi.staticfiles import StaticFiles
 from app.db.database import engine
 from app.modules.auth.routes import router as api_router
-
+from app.ui.routes import router as ui_router
 
 # Initialize FastAPI app
 app = FastAPI()
@@ -44,3 +44,4 @@ async def global_exception_handler(request: Request, exc: Exception):
 # Include API routes
 app.include_router(router, prefix="/api/v1")
 app.include_router(api_router, prefix="/api/v1")
+app.include_router(ui_router)
