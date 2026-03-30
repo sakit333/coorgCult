@@ -110,10 +110,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     successMsg.style.display = "block";
                 }
                 
-                // Redirect user back to login screen 
+                // Redirect user back to login screen almost instantly
                 setTimeout(() => {
                     window.location.href = "/login";
-                }, 2000);
+                }, 400);
                 
             } catch (err) {
                 showError(err.message);
