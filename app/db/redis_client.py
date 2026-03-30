@@ -14,7 +14,10 @@ print(redis_client.get('test_key'))  # Output: Hello, Redis!
 def save_message(session_id: str, message: str):
     key = f"chat_history:{session_id}"
     redis_client.rpush(key, message)
-    redis_client.expire(key, 3600)  # Set expiration for chat history (1 hour)
+    redis_client.expire(key, 1800)  # Set expiration for chat history (30 minutes)
+
+def delete_history(session_id: str):
+    redis_client.delete(f"chat_history:{session_id}")
 
 def get_history(session_id: str):
     return redis_client.lrange(f"chat_history:{session_id}", 0, -1)

@@ -41,13 +41,25 @@
     </nav>
 
     <!-- Main Content -->
-    <main class="container">
+    <main class="container chat-layout">
         <div class="hero-section">
             <h1>Hello from FastAPI 🚀</h1>
             <p class="subtitle">Experience the next generation of AI web applications.</p>
         </div>
 
-        <div class="input-container">
+        <div class="chat-controls" style="display: flex; justify-content: flex-end; width: 100%; margin-bottom: 5px;">
+            <button class="btn btn-login btn-sm" onclick="clearChat()" id="clear-btn" style="padding: 5px 10px; font-size: 0.8rem;">
+                Clear Chat
+            </button>
+        </div>
+
+        <div class="output-container" style="flex-grow: 1; width: 100%; display: flex; flex-direction: column; overflow: hidden; margin-bottom: 20px;">
+            <div id="chat-history-container" class="chat-history">
+                <!-- Chat messages will be dynamically added here -->
+            </div>
+        </div>
+
+        <div class="input-container" style="margin-top: 15px;">
             <input type="text" id="prompt" placeholder="Message the assistant..." autocomplete="off">
             <button class="btn btn-primary" onclick="sendData()" id="send-btn">
                 <span>Send</span>
@@ -57,12 +69,6 @@
                     <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
                 </svg>
             </button>
-        </div>
-
-        <div class="output-container">
-            <div id="response-container" class="response-wrapper">
-                <p id="response" class="response-text"></p>
-            </div>
         </div>
     </main>
 

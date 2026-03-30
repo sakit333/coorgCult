@@ -64,3 +64,10 @@ async def get_chat_history(session_id: str):
     history = get_history(session_id)
     logger.info("Retrieved chat history")
     return {"history": history}
+
+@router.delete("/history/{session_id}")
+async def clear_chat_history(session_id: str):
+    from app.db.redis_client import delete_history
+    delete_history(session_id)
+    logger.info(f"Cleared chat history manually for {session_id}")
+    return {"status": "success", "message": "History deleted"}
