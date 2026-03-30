@@ -1,0 +1,83 @@
+---
+# API ConfigMap
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: api-config
+data:
+  REDIS_HOST: "redis"
+  REDIS_PORT: "6379"
+  POSTGRES_HOST: "db"
+  POSTGRES_PORT: "5432"
+  POSTGRES_DB: "coorgcult"
+  # Replace underneath with actual host IP if Ollama is outside Kubeadm
+  # For example: http://192.168.1.50:11434
+  OLLAMA_URL: "http://<YOUR_EC2_PRIVATE_IP>:11434"
+
+---
+# API Secrets
+# These should ideally be managed by a secret manager like AWS Secrets Manager or Vault in Real Prod!
+apiVersion: v1
+kind: Secret
+metadata:
+  name: api-secret
+type: Opaque
+data:
+  # Base64 encoded 'root' and '1234'
+  POSTGRES_USER: "cm9vdA==" 
+  POSTGRES_PASSWORD: "MTIzNA=="
+  SECRET_KEY: "cXdlcnR5dWlvcGFzZGZnaGprbHp4Y3Zibm0xMjM0NTY3ODkw"
+  ALGORITHM: "SFMyNTY="
+  ACCESS_TOKEN_EXPIRE_MINUTES: "MzA="
+
+---
+# API Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fastapi-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+        - name: api
+          image: sakit333/coorgcult-api:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8000
+          envFrom:
+            - configMapRef:
+                name: api-config
+            - secretRef:
+                name: api-secret
+          # Important for Kubeadm Production scheduling
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "250m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+
+---
+# API Service (NodePort for direct access on arbitrary ports, or specify LoadBalancer for Cloud)
+apiVersion: v1
+kind: Service
+metadata:
+  name: web-service
+spec:
+  type: NodePort
+  selector:
+    app: web
+  ports:
+    - protocol: TCP
+      port: 8000
+      targetPort: 8000
+      nodePort: 30080
