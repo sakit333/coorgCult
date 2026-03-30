@@ -7,10 +7,20 @@ from app.db.database import engine
 from app.modules.auth.routes import router as api_router
 from app.ui.routes import router as ui_router
 
+# Telemetry & Observability Imports
+from prometheus_fastapi_instrumentator import Instrumentator
+import os
+
 # Initialize FastAPI app
 app = FastAPI()
 
 app.mount("/static", StaticFiles(directory="app/static"), name="static")
+
+try:
+    # Prometheus Metrics Setup (Exposes /metrics endpoint natively)
+    Instrumentator().instrument(app).expose(app)
+except Exception as e:
+    logger.warning(f"Prometheus setup deferred or missing module: {e}")
 
 
 @app.on_event("startup")

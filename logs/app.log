@@ -6,3 +6,124 @@
 2026-03-30 15:04:52,199 - app_logger - INFO - Request: GET http://localhost:8000/api/v1/history/504421cd-cb98-4aee-aa9f-385b7a9b6b54 completed in 0.0080 seconds
 2026-03-30 15:10:05,993 - app_logger - INFO - Generated text for prompt: hi
 2026-03-30 15:10:05,996 - app_logger - INFO - Request: POST http://localhost:8000/api/v1/generate completed in 10.7754 seconds
+2026-03-30 15:17:52,923 - app_logger - INFO - Application is shutting down from shutdown event
+2026-03-30 15:18:19,910 - app_logger - INFO - PostgreSQL connection established successfully
+2026-03-30 15:18:19,911 - app_logger - INFO - Application started from startup event
+2026-03-30 15:26:58,875 - app_logger - INFO - Application is shutting down from shutdown event
+2026-03-30 10:09:57,374 - app_logger - INFO - PostgreSQL connection established successfully
+2026-03-30 10:09:57,376 - app_logger - INFO - Application started from startup event
+2026-03-30 10:10:01,365 - app_logger - INFO - Request: GET http://web:8000/metrics completed in 0.0012 seconds
+2026-03-30 10:10:06,287 - app_logger - INFO - Request: GET http://web:8000/metrics completed in 0.0008 seconds
+2026-03-30 10:10:11,160 - app_logger - INFO - Request: GET http://web:8000/metrics completed in 0.0010 seconds
+2026-03-30 10:10:15,757 - app_logger - INFO - Request: GET http://web:8000/metrics completed in 0.0009 seconds
+2026-03-30 10:10:20,313 - app_logger - INFO - Request: GET http://web:8000/metrics completed in 0.0006 seconds
+2026-03-30 10:10:25,314 - app_logger - INFO - Request: GET http://web:8000/metrics completed in 0.0007 seconds
+2026-03-30 10:10:30,310 - app_logger - INFO - Request: GET http://web:8000/metrics completed in 0.0006 seconds
+2026-03-30 10:10:35,162 - app_logger - INFO - Request: GET http://localhost:8000/ completed in 0.0402 seconds
+2026-03-30 10:10:35,231 - app_logger - INFO - Request: GET http://localhost:8000/login completed in 0.0381 seconds
+2026-03-30 10:10:35,341 - app_logger - INFO - Request: GET http://web:8000/metrics completed in 0.0011 seconds
+2026-03-30 10:10:35,437 - app_logger - INFO - Request: GET http://localhost:8000/static/css/style.css completed in 0.0449 seconds
+2026-03-30 10:10:35,440 - app_logger - INFO - Request: GET http://localhost:8000/static/js/auth.js completed in 0.0416 seconds
+2026-03-30 10:10:38,353 - app_logger - INFO - Request: POST http://localhost:8000/api/v1/auth/login completed in 0.1330 seconds
+2026-03-30 10:10:40,343 - app_logger - INFO - Request: GET http://web:8000/metrics completed in 0.0025 seconds
+2026-03-30 10:10:41,606 - app_logger - INFO - Request: GET http://localhost:8000/signup completed in 0.0440 seconds
+2026-03-30 10:10:45,339 - app_logger - INFO - Request: GET http://web:8000/metrics completed in 0.0004 seconds
+2026-03-30 10:10:50,317 - app_logger - INFO - Request: GET http://web:8000/metrics completed in 0.0022 seconds
+2026-03-30 10:10:53,177 - app_logger - INFO - Request: POST http://localhost:8000/api/v1/auth/signup completed in 0.5962 seconds
+2026-03-30 10:10:53,700 - app_logger - INFO - Request: GET http://localhost:8000/login completed in 0.0460 seconds
+2026-03-30 10:10:55,339 - app_logger - INFO - Request: GET http://web:8000/metrics completed in 0.0003 seconds
+2026-03-30 10:10:56,118 - app_logger - INFO - Request: POST http://localhost:8000/api/v1/auth/login completed in 0.4631 seconds
+2026-03-30 10:10:56,197 - app_logger - INFO - Request: GET http://localhost:8000/home/504421cd-cb98-4aee-aa9f-385b7a9b6b54 completed in 0.0478 seconds
+2026-03-30 10:10:56,279 - app_logger - INFO - Request: GET http://localhost:8000/static/js/app.js completed in 0.0271 seconds
+2026-03-30 10:10:56,419 - app_logger - INFO - Retrieved chat history
+2026-03-30 10:10:56,421 - app_logger - INFO - Request: GET http://localhost:8000/api/v1/history/504421cd-cb98-4aee-aa9f-385b7a9b6b54 completed in 0.0656 seconds
+2026-03-30 10:11:00,308 - app_logger - INFO - Request: GET http://web:8000/metrics completed in 0.0009 seconds
+2026-03-30 10:11:05,333 - app_logger - INFO - Request: GET http://web:8000/metrics completed in 0.0010 seconds
+2026-03-30 10:11:10,310 - app_logger - INFO - Request: GET http://web:8000/metrics completed in 0.0008 seconds
+2026-03-30 10:11:15,332 - app_logger - INFO - Request: GET http://web:8000/metrics completed in 0.0009 seconds
+2026-03-30 10:11:20,309 - app_logger - INFO - Request: GET http://web:8000/metrics completed in 0.0005 seconds
+2026-03-30 10:11:25,317 - app_logger - INFO - Request: GET http://web:8000/metrics completed in 0.0011 seconds
+2026-03-30 10:11:30,339 - app_logger - INFO - Request: GET http://web:8000/metrics completed in 0.0007 seconds
+2026-03-30 10:11:35,340 - app_logger - INFO - Request: GET http://web:8000/metrics completed in 0.0008 seconds
+2026-03-30 10:11:40,317 - app_logger - INFO - Request: GET http://web:8000/metrics completed in 0.0008 seconds
+2026-03-30 10:11:45,342 - app_logger - INFO - Request: GET http://web:8000/metrics completed in 0.0013 seconds
+2026-03-30 10:11:50,317 - app_logger - INFO - Request: GET http://web:8000/metrics completed in 0.0007 seconds
+2026-03-30 10:11:55,345 - app_logger - INFO - Request: GET http://web:8000/metrics completed in 0.0006 seconds
+2026-03-30 10:12:00,307 - app_logger - INFO - Request: GET http://web:8000/metrics completed in 0.0004 seconds
+2026-03-30 10:12:05,343 - app_logger - INFO - Request: GET http://web:8000/metrics completed in 0.0004 seconds
+2026-03-30 10:12:10,314 - app_logger - INFO - Request: GET http://web:8000/metrics completed in 0.0005 seconds
+2026-03-30 10:12:15,342 - app_logger - INFO - Request: GET http://web:8000/metrics completed in 0.0009 seconds
+2026-03-30 10:12:20,338 - app_logger - INFO - Request: GET http://web:8000/metrics completed in 0.0006 seconds
+2026-03-30 10:12:25,347 - app_logger - INFO - Request: GET http://web:8000/metrics completed in 0.0009 seconds
+2026-03-30 10:12:30,372 - app_logger - INFO - Request: GET http://web:8000/metrics completed in 0.0005 seconds
+2026-03-30 10:12:35,366 - app_logger - INFO - Request: GET http://web:8000/metrics completed in 0.0010 seconds
+2026-03-30 10:12:40,346 - app_logger - INFO - Request: GET http://web:8000/metrics completed in 0.0008 seconds
+2026-03-30 10:12:45,375 - app_logger - INFO - Request: GET http://web:8000/metrics completed in 0.0010 seconds
+2026-03-30 10:12:50,191 - app_logger - INFO - Request: GET http://localhost:8000/ completed in 0.0018 seconds
+2026-03-30 10:12:50,218 - app_logger - INFO - Request: GET http://localhost:8000/login completed in 0.0063 seconds
+2026-03-30 10:12:50,343 - app_logger - INFO - Request: GET http://web:8000/metrics completed in 0.0005 seconds
+2026-03-30 10:12:55,374 - app_logger - INFO - Request: GET http://web:8000/metrics completed in 0.0007 seconds
+2026-03-30 10:13:00,344 - app_logger - INFO - Request: GET http://web:8000/metrics completed in 0.0011 seconds
+2026-03-30 10:13:05,355 - app_logger - INFO - Request: GET http://web:8000/metrics completed in 0.0009 seconds
+2026-03-30 10:13:10,366 - app_logger - INFO - Request: GET http://web:8000/metrics completed in 0.0026 seconds
+2026-03-30 10:13:15,346 - app_logger - INFO - Request: GET http://web:8000/metrics completed in 0.0010 seconds
+2026-03-30 10:13:20,360 - app_logger - INFO - Request: GET http://web:8000/metrics completed in 0.0011 seconds
+2026-03-30 10:13:25,334 - app_logger - INFO - Request: GET http://web:8000/metrics completed in 0.0008 seconds
+2026-03-30 10:13:30,312 - app_logger - INFO - Request: GET http://web:8000/metrics completed in 0.0007 seconds
+2026-03-30 10:13:35,336 - app_logger - INFO - Request: GET http://web:8000/metrics completed in 0.0008 seconds
+2026-03-30 10:13:40,340 - app_logger - INFO - Request: GET http://web:8000/metrics completed in 0.0009 seconds
+2026-03-30 10:13:45,339 - app_logger - INFO - Request: GET http://web:8000/metrics completed in 0.0008 seconds
+2026-03-30 10:13:50,346 - app_logger - INFO - Request: GET http://web:8000/metrics completed in 0.0009 seconds
+2026-03-30 10:13:55,318 - app_logger - INFO - Request: GET http://web:8000/metrics completed in 0.0007 seconds
+2026-03-30 10:14:00,314 - app_logger - INFO - Request: GET http://web:8000/metrics completed in 0.0006 seconds
+2026-03-30 10:14:05,317 - app_logger - INFO - Request: GET http://web:8000/metrics completed in 0.0006 seconds
+2026-03-30 10:14:10,314 - app_logger - INFO - Request: GET http://web:8000/metrics completed in 0.0010 seconds
+2026-03-30 10:14:15,342 - app_logger - INFO - Request: GET http://web:8000/metrics completed in 0.0008 seconds
+2026-03-30 10:14:20,333 - app_logger - INFO - Request: GET http://web:8000/metrics completed in 0.0008 seconds
+2026-03-30 10:14:25,347 - app_logger - INFO - Request: GET http://web:8000/metrics completed in 0.0010 seconds
+2026-03-30 10:14:30,342 - app_logger - INFO - Request: GET http://web:8000/metrics completed in 0.0009 seconds
+2026-03-30 10:14:35,332 - app_logger - INFO - Request: GET http://web:8000/metrics completed in 0.0007 seconds
+2026-03-30 10:14:40,336 - app_logger - INFO - Request: GET http://web:8000/metrics completed in 0.0006 seconds
+2026-03-30 10:14:45,321 - app_logger - INFO - Request: GET http://web:8000/metrics completed in 0.0051 seconds
+2026-03-30 10:14:50,316 - app_logger - INFO - Request: GET http://web:8000/metrics completed in 0.0012 seconds
+2026-03-30 10:14:55,338 - app_logger - INFO - Request: GET http://web:8000/metrics completed in 0.0042 seconds
+2026-03-30 15:55:06,037 - app_logger - INFO - PostgreSQL connection established successfully
+2026-03-30 15:55:06,037 - app_logger - INFO - Application started from startup event
+2026-03-30 15:55:15,068 - app_logger - INFO - Request: GET http://localhost:8000/ completed in 0.0023 seconds
+2026-03-30 15:55:15,084 - app_logger - INFO - Request: GET http://localhost:8000/login completed in 0.0045 seconds
+2026-03-30 15:55:15,260 - app_logger - INFO - Request: GET http://localhost:8000/static/js/auth.js completed in 0.0840 seconds
+2026-03-30 15:55:15,264 - app_logger - INFO - Request: GET http://localhost:8000/static/css/style.css completed in 0.0024 seconds
+2026-03-30 15:55:17,239 - app_logger - INFO - Request: POST http://localhost:8000/api/v1/auth/login completed in 0.3339 seconds
+2026-03-30 15:55:17,271 - app_logger - INFO - Request: GET http://localhost:8000/home/504421cd-cb98-4aee-aa9f-385b7a9b6b54 completed in 0.0089 seconds
+2026-03-30 15:55:17,313 - app_logger - INFO - Request: GET http://localhost:8000/static/js/app.js completed in 0.0020 seconds
+2026-03-30 15:55:17,372 - app_logger - INFO - Retrieved chat history
+2026-03-30 15:55:17,373 - app_logger - INFO - Request: GET http://localhost:8000/api/v1/history/504421cd-cb98-4aee-aa9f-385b7a9b6b54 completed in 0.0147 seconds
+2026-03-30 15:55:54,606 - app_logger - INFO - Generated text for prompt: hello
+2026-03-30 15:55:54,610 - app_logger - INFO - Request: POST http://localhost:8000/api/v1/generate completed in 12.9373 seconds
+2026-03-30 15:56:08,674 - app_logger - INFO - Generated text for prompt: yes
+2026-03-30 15:56:08,675 - app_logger - INFO - Request: POST http://localhost:8000/api/v1/generate completed in 8.4818 seconds
+2026-03-30 10:30:51,733 - app_logger - INFO - PostgreSQL connection established successfully
+2026-03-30 10:30:51,735 - app_logger - INFO - Application started from startup event
+2026-03-30 17:00:07,132 - app_logger - INFO - PostgreSQL connection established successfully
+2026-03-30 17:00:07,133 - app_logger - INFO - Application started from startup event
+2026-03-30 17:00:11,760 - app_logger - INFO - Request: GET http://localhost:8000/favicon.ico completed in 0.0025 seconds
+2026-03-30 17:00:16,280 - app_logger - INFO - Request: GET http://localhost:8000/ completed in 0.0020 seconds
+2026-03-30 17:00:16,287 - app_logger - INFO - Request: GET http://localhost:8000/login completed in 0.0024 seconds
+2026-03-30 17:00:16,403 - app_logger - INFO - Request: GET http://localhost:8000/static/css/style.css completed in 0.1005 seconds
+2026-03-30 17:00:16,407 - app_logger - INFO - Request: GET http://localhost:8000/static/js/auth.js completed in 0.0015 seconds
+2026-03-30 17:00:18,996 - app_logger - INFO - Request: GET http://localhost:8000/signup completed in 0.0035 seconds
+2026-03-30 17:00:26,215 - app_logger - INFO - Request: POST http://localhost:8000/api/v1/auth/signup completed in 0.0766 seconds
+2026-03-30 17:00:28,076 - app_logger - INFO - Request: GET http://localhost:8000/login completed in 0.0005 seconds
+2026-03-30 17:00:29,974 - app_logger - INFO - Request: POST http://localhost:8000/api/v1/auth/login completed in 0.3258 seconds
+2026-03-30 17:00:29,992 - app_logger - INFO - Request: GET http://localhost:8000/home/504421cd-cb98-4aee-aa9f-385b7a9b6b54 completed in 0.0044 seconds
+2026-03-30 17:00:30,020 - app_logger - INFO - Request: GET http://localhost:8000/static/js/app.js completed in 0.0024 seconds
+2026-03-30 17:00:30,069 - app_logger - INFO - Retrieved chat history
+2026-03-30 17:00:30,070 - app_logger - INFO - Request: GET http://localhost:8000/api/v1/history/504421cd-cb98-4aee-aa9f-385b7a9b6b54 completed in 0.0157 seconds
+2026-03-30 17:00:49,978 - app_logger - INFO - Generated text for prompt: hi
+2026-03-30 17:00:49,980 - app_logger - INFO - Request: POST http://localhost:8000/api/v1/generate completed in 13.7019 seconds
+2026-03-30 17:01:46,297 - app_logger - INFO - Cleared chat history manually for 504421cd-cb98-4aee-aa9f-385b7a9b6b54
+2026-03-30 17:01:46,298 - app_logger - INFO - Request: DELETE http://localhost:8000/api/v1/history/504421cd-cb98-4aee-aa9f-385b7a9b6b54 completed in 0.0051 seconds
+2026-03-30 17:01:51,964 - app_logger - INFO - Generated text for prompt: Hello
+2026-03-30 17:01:51,964 - app_logger - INFO - Request: POST http://localhost:8000/api/v1/generate completed in 3.2560 seconds
+2026-03-30 17:02:05,164 - app_logger - INFO - Request: GET http://localhost:8000/login completed in 0.0005 seconds
+2026-03-30 17:43:09,828 - app_logger - INFO - Application is shutting down from shutdown event

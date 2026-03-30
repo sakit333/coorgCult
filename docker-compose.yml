@@ -1,34 +1,33 @@
 version: '3.8'
 
 services:
-  # The FastAPI Application
+  # -----------------------------------------
+  # CORE APPLICATION
+  # -----------------------------------------
   web:
     build: .
     image: sakit333/coorgcult-api:latest
     container_name: coorgcult_web
     ports:
       - "8000:8000"
-    # Load default variables from .env
     env_file:
       - .env
     environment:
-      # Inject overriding variables for Docker bridging instead of localhost
       REDIS_HOST: redis
       POSTGRES_HOST: db
-      # Ensure Ollama points to the host machine running outside Docker (Ollama Desktop)
       OLLAMA_URL: http://host.docker.internal:11434
+      # Telemetry routing
+      TEMPO_URL: http://tempo:4318/v1/traces
     depends_on:
       db:
         condition: service_healthy
       redis:
         condition: service_started
     volumes:
-      # Map the app directory for live API changes without a rebuild
       - ./app:/app/app
       - ./logs:/app/logs
     restart: always
 
-  # PostgreSQL Database
   db:
     image: postgres:15-alpine
     container_name: coorgcult_db
@@ -36,8 +35,6 @@ services:
       POSTGRES_DB: ${POSTGRES_DB:-coorgcult}
       POSTGRES_USER: ${POSTGRES_USER:-root}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-1234}
-    ports:
-      - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
@@ -47,15 +44,71 @@ services:
       retries: 5
     restart: always
 
-  # Redis In-Memory DB (Session & History Cache)
   redis:
     image: redis:alpine
     container_name: coorgcult_redis
-    ports:
-      - "6379:6379"
     volumes:
       - redis_data:/data
     restart: always
+
+  # -----------------------------------------
+  # LGTM OBSERVABILITY STACK
+  # -----------------------------------------
+  grafana:
+    image: grafana/grafana:latest
+    container_name: coorgcult_grafana
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_AUTH_ANONYMOUS_ENABLED=true
+      - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin
+      - GF_AUTH_DISABLE_LOGIN_FORM=true
+    volumes:
+      - ./grafana-provisioning:/etc/grafana/provisioning
+    depends_on:
+      - prometheus
+      - loki
+      - tempo
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: coorgcult_prometheus
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+      - --enable-feature=exemplar-storage
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+
+  loki:
+    image: grafana/loki:latest
+    container_name: coorgcult_loki
+    command: -config.file=/etc/loki/local-config.yaml
+    ports:
+      - "3100:3100"
+
+  promtail:
+    image: grafana/promtail:latest
+    container_name: coorgcult_promtail
+    volumes:
+      - ./logs:/var/log/app_logs
+      - ./promtail-config.yaml:/etc/promtail/config.yml
+    command: -config.file=/etc/promtail/config.yml
+    depends_on:
+      - loki
+
+  tempo:
+    image: grafana/tempo:latest
+    command: [ "-config.file=/etc/tempo.yaml" ]
+    container_name: coorgcult_tempo
+    volumes:
+      - ./tempo-config.yaml:/etc/tempo.yaml
+    ports:
+      - "14268:14268"  # jaeger ingest
+      - "3200:3200"    # tempo
+      - "4317:4317"    # otlp grpc
+      - "4318:4318"    # otlp http
 
 volumes:
   postgres_data:
