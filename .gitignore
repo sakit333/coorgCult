@@ -81,6 +81,7 @@ Thumbs.db
 // (without the /*) to ignore the entire directory, or add logs/ to .gitignore
 // if you want to ensure the directory itself is also ignored.
 ./logs/*
+logs/app.log
 
 # Alembic
 # alembic/versions/

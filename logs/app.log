@@ -1,0 +1,8 @@
+2026-03-30 15:04:52,027 - app_logger - INFO - Request: POST http://localhost:8000/api/v1/auth/login completed in 0.3258 seconds
+2026-03-30 15:04:52,097 - app_logger - INFO - Request: GET http://localhost:8000/home/504421cd-cb98-4aee-aa9f-385b7a9b6b54 completed in 0.0053 seconds
+2026-03-30 15:04:52,183 - app_logger - INFO - Request: GET http://localhost:8000/static/css/style.css completed in 0.0165 seconds
+2026-03-30 15:04:52,186 - app_logger - INFO - Request: GET http://localhost:8000/static/js/app.js completed in 0.0156 seconds
+2026-03-30 15:04:52,198 - app_logger - INFO - Retrieved chat history
+2026-03-30 15:04:52,199 - app_logger - INFO - Request: GET http://localhost:8000/api/v1/history/504421cd-cb98-4aee-aa9f-385b7a9b6b54 completed in 0.0080 seconds
+2026-03-30 15:10:05,993 - app_logger - INFO - Generated text for prompt: hi
+2026-03-30 15:10:05,996 - app_logger - INFO - Request: POST http://localhost:8000/api/v1/generate completed in 10.7754 seconds
