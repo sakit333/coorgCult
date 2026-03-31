@@ -4,7 +4,7 @@ set -e
 
 PROJECT_DIR="/home/ubuntu/coorgCult"
 REPO_URL="https://github.com/sakit333/coorgCult.git"
-COMPOSE_FILE="docker-compose.dev.yml"
+COMPOSE_FILE="app_deploy/docker-compose.dev.yml"
 
 GREEN="\e[32m"
 RED="\e[31m"
