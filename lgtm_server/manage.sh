@@ -13,7 +13,7 @@
 # 8) Exit                                                 #
 ############################################################
 
-COMPOSE_FILE="docker-compose.yml"
+COMPOSE_FILE="/root/coorgCult/lgtm_server/docker-compose.yml"
 
 function setup_environment() {
     echo "🔧 Running setup..."

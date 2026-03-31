@@ -40,15 +40,15 @@ services:
     command: -config.file=/etc/tempo.yaml
     restart: unless-stopped
 
-  mimir:
-    image: grafana/mimir:latest
-    container_name: mimir
-    ports:
-      - "9009:9009"
-    command: -config.file=/etc/mimir.yaml
-    volumes:
-      - ./mimir/mimir.yaml:/etc/mimir.yaml
-    restart: unless-stopped
+  # mimir:
+  #   image: grafana/mimir:latest
+  #   container_name: mimir
+  #   ports:
+  #     - "9009:9009"
+  #   command: -config.file=/etc/mimir.yaml
+  #   volumes:
+  #     - ./mimir/mimir.yaml:/etc/mimir.yaml
+  #   restart: unless-stopped
 
   prometheus:
     image: prom/prometheus:latest
