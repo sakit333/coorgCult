@@ -109,16 +109,44 @@ deploy() {
 
   cd $PROJECT_DIR
 
-  log "Stopping old containers..."
-  docker compose -f $COMPOSE_FILE down || true
+  MAX_RETRIES=3
+  COUNT=1
 
-  log "Starting containers..."
-  docker compose -f $COMPOSE_FILE up -d --build
+  while [ $COUNT -le $MAX_RETRIES ]; do
+    log "🚀 Deployment attempt $COUNT..."
 
-  log "Cleaning unused images..."
-  docker system prune -f
+    # Stop old containers
+    docker compose -f $COMPOSE_FILE down || true
 
-  log "✅ Deployment done!"
+    # Build & start
+    if docker compose -f $COMPOSE_FILE up -d --build; then
+      log "✅ Deployment successful!"
+      return 0
+    fi
+
+    warn "❌ Deployment failed (attempt $COUNT)"
+
+    echo "🔧 Cleaning up before retry..."
+
+    # Cleanup containers
+    docker compose -f $COMPOSE_FILE down -v || true
+
+    # Remove dangling images
+    docker system prune -f
+
+    # Remove failed images
+    docker image prune -f
+
+    COUNT=$((COUNT+1))
+
+    if [ $COUNT -le $MAX_RETRIES ]; then
+      warn "🔁 Retrying deployment..."
+      sleep 5
+    fi
+  done
+
+  error "🔥 Deployment failed after $MAX_RETRIES attempts!"
+  exit 1
 }
 
 # -----------------------------
@@ -171,6 +199,18 @@ remove_all() {
   log "🔥 removed!"
 }
 
+# add force clean action
+force_clean_deploy() {
+  cd $PROJECT_DIR
+
+  warn "⚠️ Full cleanup before deploy..."
+
+  docker compose -f $COMPOSE_FILE down -v || true
+  docker system prune -a -f --volumes
+
+  deploy
+}
+
 # -----------------------------
 # MENU
 # -----------------------------
@@ -182,8 +222,9 @@ while true; do
   echo "3. Restart Application"
   echo "4. View Logs"
   echo "5. Remove Everything"
-  echo "6. Status"
-  echo "7. Exit"
+  echo "6. Force Clean Deploy"
+  echo "7. Status"
+  echo "8. Exit"  
   echo "========================"
 
   read -p "Choose option: " choice
@@ -194,8 +235,9 @@ while true; do
     3) restart_app ;;
     4) view_logs ;;
     5) remove_all ;;
-    6) docker ps ;;
-    7) exit 0 ;;
+    6) force_clean_deploy ;;
+    7) docker ps ;;
+    8) exit 0 ;;
     *) echo "Invalid option" ;;
   esac
 done
