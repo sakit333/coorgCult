@@ -10,7 +10,20 @@ document.addEventListener("DOMContentLoaded", () => {
         errorMsg.innerText = msg;
         errorMsg.style.display = "block";
     }
-    
+
+    function generateUUID() {
+        if (window.crypto && crypto.randomUUID) {
+            return crypto.randomUUID();
+        }
+
+        // Fallback (works everywhere)
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+            const r = Math.random() * 16 | 0;
+            const v = c === 'x' ? r : (r & 0x3 | 0x8);
+            return v.toString(16);
+        });
+    }
+
     function hideError() {
         if (!errorMsg) return;
         errorMsg.style.display = "none";
@@ -21,10 +34,10 @@ document.addEventListener("DOMContentLoaded", () => {
         loginForm.addEventListener("submit", async (e) => {
             e.preventDefault();
             hideError();
-            
+
             const username = document.getElementById("username").value.trim();
             const password = document.getElementById("password").value;
-            
+
             if (!username || !password) {
                 return showError("Both username and password are required.");
             }
@@ -39,9 +52,9 @@ document.addEventListener("DOMContentLoaded", () => {
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ username, password })
                 });
-                
+
                 const data = await res.json();
-                
+
                 if (!res.ok) {
                     throw new Error(data.detail || "Invalid credentials.");
                 }
@@ -49,13 +62,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 // Generate session ID on successful initial login
                 let sessionId = localStorage.getItem("session_id");
                 if (!sessionId) {
-                    sessionId = crypto.randomUUID();
+                    sessionId = generateUUID();
                     localStorage.setItem("session_id", sessionId);
                 }
 
                 localStorage.setItem("access_token", data.access_token);
                 window.location.href = `/home/${sessionId}`;
-                
+
             } catch (err) {
                 showError(err.message);
             } finally {
@@ -70,12 +83,12 @@ document.addEventListener("DOMContentLoaded", () => {
         signupForm.addEventListener("submit", async (e) => {
             e.preventDefault();
             hideError();
-            if(successMsg) successMsg.style.display = "none";
-            
+            if (successMsg) successMsg.style.display = "none";
+
             const username = document.getElementById("username").value.trim();
             const email = document.getElementById("email").value.trim();
             const password = document.getElementById("password").value;
-            
+
             // Validation corresponding to Pydantic model UserSignup
             if (password.length < 8) {
                 return showError("Password must be at least 8 characters long.");
@@ -94,9 +107,9 @@ document.addEventListener("DOMContentLoaded", () => {
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ username, email, password })
                 });
-                
+
                 const data = await res.json();
-                
+
                 if (!res.ok) {
                     // Extract detail if it's an array (validation error from FastAPI) or a string
                     const errMsg = Array.isArray(data.detail) ? data.detail[0].msg : data.detail;
@@ -105,20 +118,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 // Show success
                 signupForm.reset();
-                if(successMsg) {
+                if (successMsg) {
                     successMsg.innerText = "Account created successfully! Redirecting to login...";
                     successMsg.style.display = "block";
                 }
-                
+
                 // Redirect user back to login screen almost instantly
                 setTimeout(() => {
                     window.location.href = "/login";
                 }, 400);
-                
+
             } catch (err) {
                 showError(err.message);
             } finally {
-                if(submitBtn.querySelector('span').innerText === "Creating account...") {
+                if (submitBtn.querySelector('span').innerText === "Creating account...") {
                     submitBtn.style.opacity = "1";
                     submitBtn.style.pointerEvents = "auto";
                     submitBtn.querySelector('span').innerText = "Sign Up";
