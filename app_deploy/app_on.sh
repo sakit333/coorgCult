@@ -74,10 +74,10 @@ deploy() {
     log "🚀 Deployment attempt $COUNT..."
 
     # Stop old containers
-    docker compose -f $COMPOSE_FILE down || true
+    docker-compose -f $COMPOSE_FILE down || true
 
     # 🔥 IMPORTANT FIX: --env-file
-    if docker compose --env-file .env -f $COMPOSE_FILE up -d --build; then
+    if docker-compose --env-file .env -f $COMPOSE_FILE up -d --build; then
       log "✅ Deployment successful!"
       return 0
     fi
@@ -85,7 +85,7 @@ deploy() {
     warn "❌ Failed attempt $COUNT"
 
     # Cleanup
-    docker compose -f $COMPOSE_FILE down -v || true
+    docker-compose -f $COMPOSE_FILE down -v || true
     docker system prune -f
 
     COUNT=$((COUNT+1))
@@ -101,7 +101,7 @@ deploy() {
 # -----------------------------
 stop_app() {
   cd $PROJECT_DIR
-  docker compose --env-file .env -f $COMPOSE_FILE down
+  docker-compose --env-file .env -f $COMPOSE_FILE down
 }
 
 # -----------------------------
@@ -109,8 +109,8 @@ stop_app() {
 # -----------------------------
 restart_app() {
   cd $PROJECT_DIR
-  docker compose --env-file .env -f $COMPOSE_FILE down
-  docker compose --env-file .env -f $COMPOSE_FILE up -d --build
+  docker-compose --env-file .env -f $COMPOSE_FILE down
+  docker-compose --env-file .env -f $COMPOSE_FILE up -d --build
 }
 
 # -----------------------------
@@ -118,7 +118,7 @@ restart_app() {
 # -----------------------------
 logs() {
   cd $PROJECT_DIR
-  docker compose --env-file .env -f $COMPOSE_FILE logs -f
+  docker-compose --env-file .env -f $COMPOSE_FILE logs -f
 }
 
 # -----------------------------
@@ -135,7 +135,7 @@ remove_all() {
 
   cd $PROJECT_DIR
 
-  docker compose --env-file .env -f $COMPOSE_FILE down -v
+  docker-compose --env-file .env -f $COMPOSE_FILE down -v
   docker system prune -a -f --volumes
 
   log "🔥 Fully cleaned"
