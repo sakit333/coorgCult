@@ -31,27 +31,35 @@ install_docker() {
 
     sudo usermod -aG docker $USER
 
-    warn "Run: newgrp docker"
+    warn "Run: newgrp docker (only first time)"
   fi
 }
 
 # -----------------------------
-# SET ENV
+# SETUP ENV (FIXED)
 # -----------------------------
 setup_env() {
-  cd $PROJECT_DIR
+  log "Setting up environment..."
 
-  if [ -f "app_deploy/.env.docker" ]; then
-    cp app_deploy/.env.docker .env
-    log ".env configured ✔"
+  cd $PROJECT_DIR || exit 1
+
+  if [ -f "$PROJECT_DIR/app_deploy/.env.docker" ]; then
+    cp "$PROJECT_DIR/app_deploy/.env.docker" "$PROJECT_DIR/.env"
+    log ".env created ✔"
   else
     error ".env.docker not found!"
+    exit 1
+  fi
+
+  # Verify
+  if [ ! -f "$PROJECT_DIR/.env" ]; then
+    error ".env creation failed!"
     exit 1
   fi
 }
 
 # -----------------------------
-# DEPLOY WITH RETRY
+# DEPLOY (FINAL FIXED)
 # -----------------------------
 deploy() {
   install_docker
@@ -65,15 +73,18 @@ deploy() {
   while [ $COUNT -le $MAX_RETRIES ]; do
     log "🚀 Deployment attempt $COUNT..."
 
+    # Stop old containers
     docker compose -f $COMPOSE_FILE down || true
 
-    if docker compose -f $COMPOSE_FILE up -d --build; then
+    # 🔥 IMPORTANT FIX: --env-file
+    if docker compose --env-file .env -f $COMPOSE_FILE up -d --build; then
       log "✅ Deployment successful!"
       return 0
     fi
 
     warn "❌ Failed attempt $COUNT"
 
+    # Cleanup
     docker compose -f $COMPOSE_FILE down -v || true
     docker system prune -f
 
@@ -90,7 +101,7 @@ deploy() {
 # -----------------------------
 stop_app() {
   cd $PROJECT_DIR
-  docker compose -f $COMPOSE_FILE down
+  docker compose --env-file .env -f $COMPOSE_FILE down
 }
 
 # -----------------------------
@@ -98,8 +109,8 @@ stop_app() {
 # -----------------------------
 restart_app() {
   cd $PROJECT_DIR
-  docker compose -f $COMPOSE_FILE down
-  docker compose -f $COMPOSE_FILE up -d --build
+  docker compose --env-file .env -f $COMPOSE_FILE down
+  docker compose --env-file .env -f $COMPOSE_FILE up -d --build
 }
 
 # -----------------------------
@@ -107,11 +118,11 @@ restart_app() {
 # -----------------------------
 logs() {
   cd $PROJECT_DIR
-  docker compose -f $COMPOSE_FILE logs -f
+  docker compose --env-file .env -f $COMPOSE_FILE logs -f
 }
 
 # -----------------------------
-# REMOVE ALL
+# REMOVE EVERYTHING
 # -----------------------------
 remove_all() {
   warn "⚠️ This will remove EVERYTHING"
@@ -124,10 +135,10 @@ remove_all() {
 
   cd $PROJECT_DIR
 
-  docker compose -f $COMPOSE_FILE down -v
+  docker compose --env-file .env -f $COMPOSE_FILE down -v
   docker system prune -a -f --volumes
 
-  log "🔥 Cleaned بالكامل"
+  log "🔥 Fully cleaned"
 }
 
 # -----------------------------
