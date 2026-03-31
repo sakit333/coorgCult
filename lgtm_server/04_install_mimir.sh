@@ -55,7 +55,7 @@ docker run -d \
   -p 9009:9009 \
   -v /opt/lgtm/mimir:/etc/mimir \
   -v /opt/lgtm/mimir/data:/data \
-  :contentReference[oaicite:1]{index=1}/mimir:latest \
+  grafana/mimir:latest \
   -config.file=/etc/mimir/mimir.yaml
 
 echo "[INFO] Mimir running at http://<EC2-IP>:9009 ✔"
