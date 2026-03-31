@@ -110,19 +110,6 @@ do
             ;;
         2)
             start_stack
-            echo "======================================================"
-            echo "🚀 LGTM STACK IS RUNNING"
-            echo "======================================================"
-
-            echo "🌐 Access URLs:"
-
-            echo "📊 Grafana     : http://<SERVER_IP>:3000"
-            echo "📈 Prometheus  : http://<SERVER_IP>:9090"
-            echo "📦 Loki        : http://<SERVER_IP>:3100"
-            echo "🔍 Tempo       : http://<SERVER_IP>:3200"
-            echo "📊 Mimir       : http://<SERVER_IP>:9009"
-
-            echo "======================================================"
             ;;
         3)
             stop_stack
@@ -148,3 +135,16 @@ do
             ;;
     esac
 done
+echo "======================================================"
+echo "🚀 LGTM STACK IS RUNNING"
+echo "======================================================"
+
+echo "🌐 Access URLs:"
+
+echo "📊 Grafana     : http://<SERVER_IP>:3000"
+echo "📈 Prometheus  : http://<SERVER_IP>:9090"
+echo "📦 Loki        : http://<SERVER_IP>:3100"
+echo "🔍 Tempo       : http://<SERVER_IP>:3200"
+echo "📊 Mimir       : http://<SERVER_IP>:9009"
+
+echo "======================================================"
