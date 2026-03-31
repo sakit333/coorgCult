@@ -11,9 +11,20 @@ document.addEventListener("DOMContentLoaded", () => {
         errorMsg.style.display = "block";
     }
 
+    function hideError() {
+        if (!errorMsg) return;
+        errorMsg.style.display = "none";
+        errorMsg.innerText = "";
+    }
+
+    // ✅ FINAL SAFE UUID GENERATOR
     function generateUUID() {
-        if (window.crypto && crypto.randomUUID) {
-            return crypto.randomUUID();
+        try {
+            if (typeof crypto !== "undefined" && typeof crypto.randomUUID === "function") {
+                return crypto.randomUUID();
+            }
+        } catch (e) {
+            console.warn("crypto.randomUUID not available, using fallback");
         }
 
         // Fallback (works everywhere)
@@ -24,12 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    function hideError() {
-        if (!errorMsg) return;
-        errorMsg.style.display = "none";
-        errorMsg.innerText = "";
-    }
-
+    // ---------------- LOGIN ----------------
     if (loginForm) {
         loginForm.addEventListener("submit", async (e) => {
             e.preventDefault();
@@ -44,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             submitBtn.style.opacity = "0.7";
             submitBtn.style.pointerEvents = "none";
-            submitBtn.querySelector('span').innerText = "Logging in...";
+            submitBtn.querySelector("span").innerText = "Logging in...";
 
             try {
                 const res = await fetch("/api/v1/auth/login", {
@@ -59,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     throw new Error(data.detail || "Invalid credentials.");
                 }
 
-                // Generate session ID on successful initial login
+                // ✅ SAFE SESSION ID
                 let sessionId = localStorage.getItem("session_id");
                 if (!sessionId) {
                     sessionId = generateUUID();
@@ -67,18 +73,20 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
 
                 localStorage.setItem("access_token", data.access_token);
+
                 window.location.href = `/home/${sessionId}`;
 
             } catch (err) {
-                showError(err.message);
+                showError(err.message || "Login failed");
             } finally {
                 submitBtn.style.opacity = "1";
                 submitBtn.style.pointerEvents = "auto";
-                submitBtn.querySelector('span').innerText = "Log In";
+                submitBtn.querySelector("span").innerText = "Log In";
             }
         });
     }
 
+    // ---------------- SIGNUP ----------------
     if (signupForm) {
         signupForm.addEventListener("submit", async (e) => {
             e.preventDefault();
@@ -89,7 +97,6 @@ document.addEventListener("DOMContentLoaded", () => {
             const email = document.getElementById("email").value.trim();
             const password = document.getElementById("password").value;
 
-            // Validation corresponding to Pydantic model UserSignup
             if (password.length < 8) {
                 return showError("Password must be at least 8 characters long.");
             }
@@ -99,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             submitBtn.style.opacity = "0.7";
             submitBtn.style.pointerEvents = "none";
-            submitBtn.querySelector('span').innerText = "Creating account...";
+            submitBtn.querySelector("span").innerText = "Creating account...";
 
             try {
                 const res = await fetch("/api/v1/auth/signup", {
@@ -111,31 +118,30 @@ document.addEventListener("DOMContentLoaded", () => {
                 const data = await res.json();
 
                 if (!res.ok) {
-                    // Extract detail if it's an array (validation error from FastAPI) or a string
-                    const errMsg = Array.isArray(data.detail) ? data.detail[0].msg : data.detail;
+                    const errMsg = Array.isArray(data.detail)
+                        ? data.detail[0].msg
+                        : data.detail;
+
                     throw new Error(errMsg || "Failed to create account.");
                 }
 
-                // Show success
                 signupForm.reset();
+
                 if (successMsg) {
-                    successMsg.innerText = "Account created successfully! Redirecting to login...";
+                    successMsg.innerText = "Account created successfully! Redirecting...";
                     successMsg.style.display = "block";
                 }
 
-                // Redirect user back to login screen almost instantly
                 setTimeout(() => {
                     window.location.href = "/login";
-                }, 400);
+                }, 500);
 
             } catch (err) {
-                showError(err.message);
+                showError(err.message || "Signup failed");
             } finally {
-                if (submitBtn.querySelector('span').innerText === "Creating account...") {
-                    submitBtn.style.opacity = "1";
-                    submitBtn.style.pointerEvents = "auto";
-                    submitBtn.querySelector('span').innerText = "Sign Up";
-                }
+                submitBtn.style.opacity = "1";
+                submitBtn.style.pointerEvents = "auto";
+                submitBtn.querySelector("span").innerText = "Sign Up";
             }
         });
     }
