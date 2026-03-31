@@ -81,11 +81,21 @@ setup_env() {
   read -p "Choice [1/2]: " choice
 
   if [ "$choice" == "2" ]; then
-    cp .env.local .env
-    log "Using LOCAL env"
+    if [ -f "app_deploy/.env.local" ]; then
+      cp app_deploy/.env.local .env
+      log "Using LOCAL env ✔"
+    else
+      error ".env.local not found in app_deploy/"
+      exit 1
+    fi
   else
-    cp .env.docker .env
-    log "Using DOCKER env"
+    if [ -f "app_deploy/.env.docker" ]; then
+      cp app_deploy/.env.docker .env
+      log "Using DOCKER env ✔"
+    else
+      error ".env.docker not found in app_deploy/"
+      exit 1
+    fi
   fi
 }
 
