@@ -53,7 +53,15 @@ function setup_environment() {
 
 function start_stack() {
     echo "▶ Starting LGTM stack..."
-    docker-compose -f $COMPOSE_FILE up -d
+
+    if [ -f ".env" ]; then
+        echo "✅ .env file found"
+        docker-compose -f $COMPOSE_FILE up -d
+    else
+        echo "⚠️ .env file NOT found, creating empty one..."
+        touch .env
+        docker-compose -f $COMPOSE_FILE up -d
+    fi
 }
 
 function stop_stack() {
