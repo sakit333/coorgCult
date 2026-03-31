@@ -11,11 +11,27 @@ if [ -f "$BIN_DIR/tempo" ]; then
     echo "[INFO] Tempo already installed ✔"
 else
     echo "[INFO] Downloading Tempo..."
+
     cd /tmp
-    wget --show-progress https://github.com/grafana/tempo/releases/latest/download/tempo-linux-amd64.zip
-    unzip tempo-linux-amd64.zip
-    mv tempo-linux-amd64 $BIN_DIR/tempo
+
+    # ✅ Correct file (UPDATED)
+    wget --show-progress https://github.com/grafana/tempo/releases/latest/download/tempo-linux-amd64.tar.gz
+
+    echo "[INFO] Extracting Tempo..."
+    tar -xzf tempo-linux-amd64.tar.gz
+
+    # 🔍 Find correct binary
+    TEMPO_BIN=$(find /tmp -type f -name "tempo" | head -n 1)
+
+    if [ -z "$TEMPO_BIN" ]; then
+        echo "❌ Tempo binary not found!"
+        exit 1
+    fi
+
+    mv "$TEMPO_BIN" $BIN_DIR/tempo
     chmod +x $BIN_DIR/tempo
+
+    echo "[INFO] Tempo installed ✔"
 fi
 
 echo "[INFO] Creating Tempo config..."
