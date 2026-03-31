@@ -1,0 +1,54 @@
+version: "3.8"
+
+services:
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana-data:/var/lib/grafana
+    restart: unless-stopped
+
+  loki:
+    image: grafana/loki:2.9.0
+    container_name: loki
+    ports:
+      - "3100:3100"
+    command: -config.file=/etc/loki/config.yaml
+    volumes:
+      - ./loki/loki-config.yaml:/etc/loki/config.yaml
+    restart: unless-stopped
+
+  promtail:
+    image: grafana/promtail:2.9.0
+    container_name: promtail
+    volumes:
+      - ./promtail/promtail.yaml:/etc/promtail/config.yaml
+    command: -config.file=/etc/promtail/config.yaml
+    restart: unless-stopped
+
+  tempo:
+    image: grafana/tempo:2.4.1
+    container_name: tempo
+    ports:
+      - "3200:3200"
+      - "4317:4317"
+    volumes:
+      - ./tempo/tempo.yaml:/etc/tempo.yaml
+    command: -config.file=/etc/tempo.yaml
+    restart: unless-stopped
+
+  mimir:
+    image: grafana/mimir:latest
+    container_name: mimir
+    ports:
+      - "9009:9009"
+    command: -config.file=/etc/mimir.yaml
+    volumes:
+      - ./mimir/mimir.yaml:/etc/mimir.yaml
+    restart: unless-stopped
+
+volumes:
+  grafana-data:
