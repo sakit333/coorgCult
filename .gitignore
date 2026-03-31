@@ -85,3 +85,9 @@ logs/app.log
 
 # Alembic
 # alembic/versions/
+
+# any directory terraform ignore
+**/.terraform
+**/.terraform.lock.hcl
+**/*.tfstate
+**/*.tfstate.*  
