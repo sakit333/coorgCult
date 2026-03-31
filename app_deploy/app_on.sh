@@ -2,7 +2,7 @@
 
 set -e
 
-PROJECT_DIR="/home/ubuntu/coorgCult"
+PROJECT_DIR="/home/root/coorgCult"
 COMPOSE_FILE="app_deploy/docker-compose.dev.yml"
 
 GREEN="\e[32m"
