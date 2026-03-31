@@ -1,21 +1,61 @@
 #!/bin/bash
 set -e
 
-BASE_DIR="/opt/lgtm"
-BIN_DIR="$BASE_DIR/bin"
+echo "[INFO] Checking Docker..."
 
-VERSION="3.0.5"
-
-if [ -f "$BIN_DIR/mimir" ]; then
-    echo "[INFO] Mimir already installed ✔"
+if ! command -v docker &> /dev/null; then
+    echo "[INFO] Installing Docker..."
+    apt update
+    apt install -y docker.io
+    systemctl enable docker
+    systemctl start docker
 else
-    echo "[INFO] Downloading Mimir..."
-
-    cd /tmp
-    wget --show-progress https://github.com/grafana/mimir/releases/download/mimir-${VERSION}/mimir_${VERSION}_linux_amd64.tar.gz
-
-    tar -xzf mimir_${VERSION}_linux_amd64.tar.gz
-
-    mv mimir_${VERSION}_linux_amd64/mimir $BIN_DIR/mimir
-    chmod +x $BIN_DIR/mimir
+    echo "[INFO] Docker already installed ✔"
 fi
+
+echo "[INFO] Creating Mimir config..."
+
+mkdir -p /opt/lgtm/mimir
+
+cat <<EOF > /opt/lgtm/mimir/mimir.yaml
+server:
+  http_listen_port: 9009
+
+blocks_storage:
+  backend: filesystem
+  filesystem:
+    dir: /data/blocks
+
+compactor:
+  data_dir: /data/compactor
+
+distributor:
+  ring:
+    kvstore:
+      store: inmemory
+
+ingester:
+  ring:
+    kvstore:
+      store: inmemory
+    replication_factor: 1
+
+store_gateway:
+  sharding_ring:
+    kvstore:
+      store: inmemory
+EOF
+
+echo "[INFO] Running Mimir container..."
+
+docker rm -f mimir 2>/dev/null || true
+
+docker run -d \
+  --name mimir \
+  -p 9009:9009 \
+  -v /opt/lgtm/mimir:/etc/mimir \
+  -v /opt/lgtm/mimir/data:/data \
+  :contentReference[oaicite:1]{index=1}/mimir:latest \
+  -config.file=/etc/mimir/mimir.yaml
+
+echo "[INFO] Mimir running at http://<EC2-IP>:9009 ✔"
