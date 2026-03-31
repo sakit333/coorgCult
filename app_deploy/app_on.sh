@@ -24,7 +24,7 @@ install_docker() {
     log "Installing Docker..."
 
     sudo apt update -y
-    sudo apt install -y docker.io docker-compose-plugin
+    sudo apt install -y docker.io docker-compose
 
     sudo systemctl enable docker
     sudo systemctl start docker
